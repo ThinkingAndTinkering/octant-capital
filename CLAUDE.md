@@ -19,6 +19,13 @@ python3 -m http.server 8087     # any static server works
 Must be served over HTTP — ES modules + import map fail on `file://`.
 Stop a stray server: `lsof -ti:8087 | xargs kill`.
 
+## Deployment
+- **Live URL: https://octant-global.onrender.com**
+- Render static site `octant-global` (srv-d8ljuhe4uuhc739on12g), workspace tea-d65stirnv86c73dv9a9g
+- Source: https://github.com/ThinkingAndTinkering/octant-capital (public), branch `main`
+- No build command, publish path `./`, auto-deploy on push to `main`
+- Dashboard: https://dashboard.render.com/static/srv-d8ljuhe4uuhc739on12g
+
 ## Structure
 - `index.html` — all markup; import map before module script; GSAP/Lenis as classic scripts at body end (sync, then module `main.js` runs after)
 - `styles.css` — design system: ink `#0a0d14` / bone `#ece7da` / brass `#c4a265`, hairlines, clamp() type scale, film-grain overlay (SVG feTurbulence data URI)
