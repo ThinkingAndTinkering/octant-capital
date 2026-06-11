@@ -1,0 +1,409 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Octant — Global Investment Management</title>
+  <meta name="description" content="Octant Global Management is a private investment partnership managing concentrated, research-driven strategies across global public and private markets." />
+  <meta name="theme-color" content="#0a0d14" />
+  <meta property="og:title" content="Octant Global Management" />
+  <meta property="og:description" content="Position is everything. A private investment partnership measuring outcomes in decades, not quarters." />
+  <meta property="og:type" content="website" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cg fill='none' stroke='%23ece7da' stroke-width='2'%3E%3Cpath d='M5 27h22'/%3E%3Cpath d='M5 27 21 11'/%3E%3Cpath d='M27 27a22 22 0 0 0-6-16'/%3E%3C/g%3E%3Ccircle cx='23' cy='7' r='2.2' fill='%23c4a265'/%3E%3C/svg%3E" />
+
+  <script>document.documentElement.classList.add('js');
+    if (matchMedia('(prefers-reduced-motion: reduce)').matches) document.documentElement.classList.add('reduced');
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..600&family=Inter:wght@400;500&family=IBM+Plex+Mono:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+
+  <script type="importmap">
+    { "imports": { "three": "https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js" } }
+  </script>
+</head>
+<body data-loading>
+
+  <a class="skip" href="#main">Skip to content</a>
+
+  <!-- Preloader -->
+  <div class="loader" aria-hidden="true">
+    <div class="loader__center">
+      <svg class="loader__mark" viewBox="0 0 64 64" fill="none" aria-hidden="true">
+        <path class="loader__stroke" d="M10 54h44" />
+        <path class="loader__stroke" d="M10 54 42 22" />
+        <path class="loader__stroke loader__arc" d="M54 54A44 44 0 0 0 41.1 22.9" />
+        <circle class="loader__star" cx="45" cy="14" r="3" />
+      </svg>
+      <div class="loader__word" aria-hidden="true">
+        <span>O</span><span>C</span><span>T</span><span>A</span><span>N</span><span>T</span>
+      </div>
+    </div>
+    <div class="loader__foot">
+      <span class="mono">EST. MMIX — NEW YORK</span>
+      <span class="mono loader__count">00</span>
+    </div>
+  </div>
+
+  <!-- Custom cursor (desktop) -->
+  <div class="cursor" aria-hidden="true">
+    <div class="cursor__dot"></div>
+    <div class="cursor__ring"></div>
+  </div>
+
+  <!-- Nav -->
+  <header class="nav">
+    <a class="nav__brand" href="#top" data-scroll>
+      <svg class="mark" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+        <path d="M5 27h22" /><path d="M5 27 21 11" /><path d="M27 27a22 22 0 0 0-6-16" />
+        <circle class="mark__star" cx="23" cy="7" r="2.2" />
+      </svg>
+      <span class="nav__word">Octant</span>
+    </a>
+    <nav class="nav__links" aria-label="Primary">
+      <a href="#approach" data-scroll>Approach</a>
+      <a href="#strategies" data-scroll>Strategies</a>
+      <a href="#presence" data-scroll>Presence</a>
+      <a href="#careers" data-scroll>Careers</a>
+    </nav>
+    <div class="nav__right">
+      <a class="btn nav__login" href="#contact" data-scroll><span>Investor Login</span></a>
+      <button class="nav__toggle" aria-expanded="false" aria-controls="menu" aria-label="Open menu">
+        <span class="nav__toggle-label mono">Menu</span>
+        <span class="nav__toggle-icon"><i></i><i></i></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Full-screen menu -->
+  <div class="menu" id="menu" aria-hidden="true">
+    <div class="menu__inner">
+      <nav class="menu__links" aria-label="Menu">
+        <a href="#top" data-scroll><span class="mono menu__num">01</span>Firm</a>
+        <a href="#approach" data-scroll><span class="mono menu__num">02</span>Approach</a>
+        <a href="#strategies" data-scroll><span class="mono menu__num">03</span>Strategies</a>
+        <a href="#presence" data-scroll><span class="mono menu__num">04</span>Presence</a>
+        <a href="#careers" data-scroll><span class="mono menu__num">05</span>Careers</a>
+        <a href="#contact" data-scroll><span class="mono menu__num">06</span>Contact</a>
+      </nav>
+      <div class="menu__meta">
+        <p class="mono">NEW YORK — LONDON<br/>SINGAPORE — GENEVA</p>
+        <p class="mono"><a href="mailto:ir@octantglobal.com">ir@octantglobal.com</a></p>
+      </div>
+    </div>
+  </div>
+
+  <main id="main">
+
+    <!-- ============ HERO ============ -->
+    <section class="hero" id="top">
+      <div class="hero__glow" aria-hidden="true"></div>
+      <canvas class="hero__canvas" id="scene" aria-hidden="true"></canvas>
+      <div class="hero__shade" aria-hidden="true"></div>
+      <div class="hero__scale mono" aria-hidden="true"></div>
+
+      <div class="hero__content container">
+        <p class="hero__eyebrow mono">Est. MMIX — A private investment partnership</p>
+        <h1 class="hero__title">
+          <span class="hline"><span class="hline__in">Position is</span></span>
+          <span class="hline"><span class="hline__in"><em>everything</em><span class="gold">.</span></span></span>
+        </h1>
+        <p class="hero__sub">Octant manages $28 billion in concentrated, research-driven
+          strategies across global markets — for endowments, foundations, and families
+          who measure outcomes in decades, not quarters.</p>
+        <div class="hero__cta">
+          <a class="btn btn--primary" href="#approach" data-scroll><span>The approach</span></a>
+          <a class="link-arrow mono" href="#strategies" data-scroll>Strategies
+            <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2 8h11M9 3.5 13.5 8 9 12.5"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="hero__foot container">
+        <span class="mono hero__coords" id="coords">40.7128° N / 74.0060° W — NEW YORK</span>
+        <span class="mono hero__hint">Scroll
+          <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 2v11M3.5 9 8 13.5 12.5 9"/></svg>
+        </span>
+      </div>
+    </section>
+
+    <!-- ============ STATS ============ -->
+    <section class="stats" aria-label="Firm at a glance">
+      <div class="container">
+        <div class="stats__head">
+          <span class="mono section-label">Firm — at a glance</span>
+          <span class="mono stats__asof">As of 31 Mar 2026</span>
+        </div>
+        <div class="stats__grid">
+          <div class="stat" data-reveal>
+            <span class="stat__num mono" data-target="28.4" data-decimals="1" data-prefix="$" data-suffix="B">$0.0B</span>
+            <span class="stat__label">Assets under management</span>
+          </div>
+          <div class="stat" data-reveal>
+            <span class="stat__num mono" data-target="2009" data-start="1962" data-decimals="0">1962</span>
+            <span class="stat__label">Founded</span>
+          </div>
+          <div class="stat" data-reveal>
+            <span class="stat__num mono" data-target="47" data-decimals="0">0</span>
+            <span class="stat__label">Investment professionals</span>
+          </div>
+          <div class="stat" data-reveal>
+            <span class="stat__num mono" data-target="6.8" data-decimals="1" data-suffix="&nbsp;yrs">0.0 yrs</span>
+            <span class="stat__label">Average holding period</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PHILOSOPHY ============ -->
+    <section class="philosophy" id="approach">
+      <div class="container">
+        <header class="section-head">
+          <span class="mono section-label" data-reveal>01 — Philosophy</span>
+          <h2 class="section-title" data-split><em>Markets drift.</em> Principles hold.</h2>
+          <p class="section-lead" data-reveal>We believe returns come from knowing more about less.
+            Octant runs concentrated portfolios built through primary research — and holds
+            them long enough for the work to matter.</p>
+        </header>
+
+        <div class="tenets">
+          <article class="tenet" data-rule>
+            <span class="mono tenet__num">01</span>
+            <h3 class="tenet__title">Depth over breadth</h3>
+            <p class="tenet__body">Twenty-five names, not two hundred and fifty. Every position is
+              underwritten as if we were buying the entire business — primary research, hundreds
+              of conversations, models built from the unit economics up.</p>
+          </article>
+          <article class="tenet" data-rule>
+            <span class="mono tenet__num">02</span>
+            <h3 class="tenet__title">Time is the edge</h3>
+            <p class="tenet__body">Information advantages last weeks. Analytical advantages last months.
+              Behavioral advantages — the willingness to look wrong for years — compound indefinitely.
+              Our capital base is built to exploit the last one.</p>
+          </article>
+          <article class="tenet" data-rule>
+            <span class="mono tenet__num">03</span>
+            <h3 class="tenet__title">Risk is measured, never outsourced</h3>
+            <p class="tenet__body">No benchmark hugging, no factor crutches. We size positions so that
+              being early — our most common error — is survivable, and being right is consequential.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ INSTRUMENT ============ -->
+    <section class="instrument">
+      <div class="container instrument__grid">
+        <div class="instrument__fig" data-reveal>
+          <svg class="instrument__svg" viewBox="0 0 420 420" fill="none" aria-hidden="true">
+            <g class="instrument__ticks"></g>
+            <path class="instrument__arc" d="M 396 396 A 376 376 0 0 0 130.1 130.1" />
+            <path class="instrument__radius" d="M20 396h376" />
+            <path class="instrument__radius instrument__radius--up" d="M20 396 130.1 130.1" />
+            <circle class="instrument__star" cx="148" cy="86" r="5" />
+            <text class="instrument__deg mono" x="40" y="384">0°</text>
+            <text class="instrument__deg mono" x="150" y="156">45°</text>
+          </svg>
+        </div>
+        <blockquote class="instrument__quote">
+          <p data-split>An octant fixes a ship&rsquo;s position from two constants: the horizon
+            and a star. We navigate the same way — <em>price is our horizon, value our star.</em></p>
+        </blockquote>
+      </div>
+    </section>
+
+    <!-- ============ STRATEGIES ============ -->
+    <section class="strategies" id="strategies">
+      <div class="strategies__stage">
+        <header class="section-head container">
+          <span class="mono section-label" data-reveal>02 — Strategies</span>
+          <h2 class="section-title" data-split>Three instruments, <em>one discipline.</em></h2>
+        </header>
+        <div class="strategies__viewport">
+          <div class="strategies__track">
+            <article class="scard">
+              <div class="scard__top">
+                <span class="mono scard__num">01</span>
+                <span class="mono scard__tag">Flagship</span>
+              </div>
+              <h3 class="scard__title">Global Equities</h3>
+              <p class="scard__body">Concentrated long/short equity across developed and emerging
+                markets. High-conviction longs in durable compounders; shorts in structural
+                decliners priced for permanence.</p>
+              <ul class="scard__meta mono">
+                <li>Inception 2009</li><li>Long/short equity</li><li>20–30 core positions</li>
+              </ul>
+            </article>
+            <article class="scard">
+              <div class="scard__top">
+                <span class="mono scard__num">02</span>
+                <span class="mono scard__tag">Crossover</span>
+              </div>
+              <h3 class="scard__title">Private Growth</h3>
+              <p class="scard__body">Crossover capital for category-defining companies from
+                Series C to IPO — underwritten with public-market discipline and a
+                public-market exit lens.</p>
+              <ul class="scard__meta mono">
+                <li>Inception 2014</li><li>Growth equity</li><li>Series C → IPO</li>
+              </ul>
+            </article>
+            <article class="scard">
+              <div class="scard__top">
+                <span class="mono scard__num">03</span>
+                <span class="mono scard__tag">Episodic</span>
+              </div>
+              <h3 class="scard__title">Structured Opportunities</h3>
+              <p class="scard__body">Capital solutions when conventional financing retreats:
+                convertibles, secondaries, and special situations sourced through the
+                equity research stack.</p>
+              <ul class="scard__meta mono">
+                <li>Inception 2019</li><li>Opportunistic credit</li><li>Drawdown vehicle</li>
+              </ul>
+            </article>
+            <div class="strategies__end">
+              <p class="mono">One research engine.<br/>Every point on the capital structure.</p>
+            </div>
+          </div>
+        </div>
+        <div class="strategies__progress" aria-hidden="true"><i></i></div>
+      </div>
+    </section>
+
+    <!-- ============ QUOTE ============ -->
+    <section class="quote">
+      <div class="container">
+        <blockquote>
+          <p class="quote__text">&ldquo;The hard part was never finding the idea. It&rsquo;s the four
+            years between being right and being proven right — that is where returns live,
+            and where most capital cannot stay.&rdquo;</p>
+          <cite class="mono">E. M. Calloway — Founder &amp; Chief Investment Officer</cite>
+        </blockquote>
+      </div>
+    </section>
+
+    <!-- ============ PRESENCE ============ -->
+    <section class="presence" id="presence">
+      <div class="container">
+        <header class="section-head">
+          <span class="mono section-label" data-reveal>03 — Presence</span>
+          <h2 class="section-title" data-split>Four desks. <em>One book.</em></h2>
+        </header>
+        <div class="presence__rows">
+          <div class="office" data-rule data-tz="America/New_York">
+            <h3 class="office__city">New York</h3>
+            <span class="mono office__coords">40.7128° N / 74.0060° W</span>
+            <span class="office__role">Headquarters — Research &amp; trading</span>
+            <span class="mono office__time">—</span>
+          </div>
+          <div class="office" data-rule data-tz="Europe/London">
+            <h3 class="office__city">London</h3>
+            <span class="mono office__coords">51.5072° N / 0.1276° W</span>
+            <span class="office__role">European research</span>
+            <span class="mono office__time">—</span>
+          </div>
+          <div class="office" data-rule data-tz="Asia/Singapore">
+            <h3 class="office__city">Singapore</h3>
+            <span class="mono office__coords">1.3521° N / 103.8198° E</span>
+            <span class="office__role">Asia research</span>
+            <span class="mono office__time">—</span>
+          </div>
+          <div class="office" data-rule data-tz="Europe/Zurich">
+            <h3 class="office__city">Geneva</h3>
+            <span class="mono office__coords">46.2044° N / 6.1432° E</span>
+            <span class="office__role">Client partnership</span>
+            <span class="mono office__time">—</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CAREERS ============ -->
+    <section class="careers" id="careers">
+      <div class="container careers__grid">
+        <div>
+          <span class="mono section-label" data-reveal>04 — Careers</span>
+          <h2 class="section-title" data-split>We hire for <em>slope,</em> not intercept.</h2>
+          <p class="section-lead" data-reveal>Backgrounds vary — our partners include a former
+            medicinal chemist, a chess grandmaster, and an investigative journalist. What they
+            share is the appetite to go embarrassingly deep.</p>
+          <a class="btn btn--primary" href="#contact" data-scroll data-reveal><span>Open roles</span></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CONTACT ============ -->
+    <section class="contact" id="contact">
+      <div class="container">
+        <h2 class="contact__title" data-split>Begin a <em>conversation.</em></h2>
+        <div class="contact__rows">
+          <a class="crow" href="mailto:ir@octantglobal.com" data-rule>
+            <span class="crow__label">Limited partners</span>
+            <span class="mono crow__mail">ir@octantglobal.com</span>
+            <svg class="crow__arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 5.5 19.5 12 13 18.5"/></svg>
+          </a>
+          <a class="crow" href="mailto:talent@octantglobal.com" data-rule>
+            <span class="crow__label">Careers</span>
+            <span class="mono crow__mail">talent@octantglobal.com</span>
+            <svg class="crow__arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 5.5 19.5 12 13 18.5"/></svg>
+          </a>
+          <a class="crow" href="mailto:press@octantglobal.com" data-rule>
+            <span class="crow__label">Press</span>
+            <span class="mono crow__mail">press@octantglobal.com</span>
+            <svg class="crow__arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 5.5 19.5 12 13 18.5"/></svg>
+          </a>
+        </div>
+        <p class="contact__note mono" data-reveal>We respond to every serious inquiry within two business days.</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <svg class="mark" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+            <path d="M5 27h22" /><path d="M5 27 21 11" /><path d="M27 27a22 22 0 0 0-6-16" />
+            <circle class="mark__star" cx="23" cy="7" r="2.2" />
+          </svg>
+          <p class="mono footer__motto">Measure, then conviction.</p>
+        </div>
+        <nav class="footer__col" aria-label="Explore">
+          <span class="mono footer__head">Explore</span>
+          <a href="#top" data-scroll>Firm</a>
+          <a href="#approach" data-scroll>Approach</a>
+          <a href="#strategies" data-scroll>Strategies</a>
+          <a href="#presence" data-scroll>Presence</a>
+        </nav>
+        <nav class="footer__col" aria-label="Legal">
+          <span class="mono footer__head">Legal</span>
+          <span class="footer__dead" title="Fictional firm — this document does not exist.">Disclosures</span>
+          <span class="footer__dead" title="Fictional firm — this document does not exist.">Form ADV</span>
+          <span class="footer__dead" title="Fictional firm — this document does not exist.">Privacy</span>
+          <span class="footer__dead" title="Fictional firm — this document does not exist.">Terms</span>
+        </nav>
+        <div class="footer__col">
+          <span class="mono footer__head">Offices</span>
+          <span>New York</span><span>London</span><span>Singapore</span><span>Geneva</span>
+        </div>
+      </div>
+      <p class="footer__legal">Octant Global Management LP (&ldquo;Octant&rdquo;) is a fictional firm and this
+        site is a design study. Nothing on this page constitutes an offer to sell or a solicitation of an
+        offer to buy any security, nor investment, legal, or tax advice. Past performance is not indicative
+        of future results — particularly for firms that do not exist.</p>
+      <div class="footer__base">
+        <span class="mono">© <span id="year">2026</span> Octant Global Management LP</span>
+        <span class="mono">40.7128° N / 74.0060° W</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.3.11/dist/lenis.min.js"></script>
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>
